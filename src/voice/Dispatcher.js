@@ -33,6 +33,11 @@ class Dispatcher extends EventEmitter {
         this.command.run()
     }
 
+    changeVolume(vol){
+      if(this.dispatchStream)
+          this.dispatchStream.changeVolume(vol)
+    }
+
     stopStream() {
         if(this.dispatchStream)
             this.dispatchStream.close()
